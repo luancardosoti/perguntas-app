@@ -38,10 +38,12 @@ class _PerguntasAppState extends State<PerguntaApp> {
   ];
 
   void _responder(int pontuacao) {
-    setState(() {
-      _perguntaSelecionada++;
-      _pontuacaoTotal += pontuacao;
-    });
+    if (temPerguntaSelecionada) {
+      setState(() {
+        _perguntaSelecionada++;
+        _pontuacaoTotal += pontuacao;
+      });
+    }
 
     print(_pontuacaoTotal);
   }
